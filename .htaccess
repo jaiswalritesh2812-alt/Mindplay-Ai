@@ -1,0 +1,14 @@
+# Deny all access to logs directory
+
+<FilesMatch ".\*">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Allow only from localhost for debugging
+
+<FilesMatch "\.(log|txt)$">
+Order allow,deny
+Allow from 127.0.0.1
+Deny from all
+</FilesMatch>
